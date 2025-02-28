@@ -1,4 +1,12 @@
-<?php include 'database/database.php'; ?>
+<?php
+session_start(); 
+include 'database/database.php';
+
+if (!isset($_SESSION['user'])) {
+    header('Location: views/login.php'); 
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +14,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TaskMinder</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="task.png" type="image/x-icon">
+  <link href="../statics/css/bootstrap.min.css" rel="stylesheet">
+  <script src="../statics/js/bootstrap.js"></script>
   <style>
     :root {
       --primary-color: #2c3e50;
@@ -55,6 +65,7 @@
           <div>
             <a href="views/add_todo.php" class="btn btn-primary btn-sm">+ New Task</a>
           </div>
+          <a href="handlers/logout_handler.php" class="btn btn-danger btn-sm">Logout</a>
         </div>
 
         <form method="GET" class="mb-4">

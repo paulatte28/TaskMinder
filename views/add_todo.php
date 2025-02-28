@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> Create Todo </title>
+  <link rel="icon" href="../task.png" type="image/x-icon">
   <link href="../statics/css/bootstrap.min.css" rel="stylesheet">
   <script src="../statics/js/bootstrap.js"></script>
 </head>
